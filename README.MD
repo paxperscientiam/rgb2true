@@ -7,7 +7,7 @@ README
 __Example__
 
 ``` shell
-$./rgb2true 255 0 255
+./rgb2true 255 0 255
 ```
 
 Returns the following:
