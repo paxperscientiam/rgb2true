@@ -1,5 +1,8 @@
 #!/bin/bash
 
+[[ -z $COLORTERM ]] && \
+  printf "Please use a True Color terminal!\n" && \
+  exit 1
 
 help() {
   printf '\a\n%s\n\n\x1b[38;4m%s\x1b[0m\n%s\n\v%s\n' \
@@ -25,7 +28,7 @@ rgb2true() {
       return 1
     fi
   done
-             
+  
   printf "\x1b[48;2;0;0;0m"
   printf "\x1b[38;2;${R};${G};${B}m"
   printf "TRUECOLOR"

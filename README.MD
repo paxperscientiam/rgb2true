@@ -19,3 +19,6 @@ printf "\x1b[38;2;255;0;255m%s\x1b[0m\n" "example text"
 
 
 
+__References__
+* http://tldp.org/LDP/abs/html/comparison-ops.html
+* https://gist.github.com/XVilka/8346728
