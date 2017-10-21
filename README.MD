@@ -10,7 +10,9 @@ __Example__
 $./rgb2true 255 0 255
 ```
 
-Returns the following: `\x1b[38;2;255;0;255mTRUECOLOR\x1b[0m`
+Returns the following:
+`\x1b[38;2;255;0;255mTRUECOLOR\x1b[0m`
+`printf "\x1b[38;2;200;200;0m%s\x1b[0m\n" "example text"`
 
 
 
