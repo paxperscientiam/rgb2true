@@ -13,7 +13,7 @@ $./rgb2true 255 0 255
 Returns the following:
 ``` shell
 \x1b[38;2;255;0;255mTRUECOLOR\x1b[0m
-printf "\x1b[38;2;200;200;0m%s\x1b[0m\n" "example text"
+printf "\x1b[38;2;255;0;255m%s\x1b[0m\n" "example text"
 ```
 
 
