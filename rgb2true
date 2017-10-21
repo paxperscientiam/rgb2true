@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+help() {
+  printf "Usage:\n$0 RRR [GGG] [BBB]\n"
+}
+
+
+
+rgb2true() {
+
+  [[ -z $1 ]] && help && return 1
+  R=$1
+
+  [[ -z $2 ]] && G=0
+  G=$2
+
+  [[ -z $3 ]] && B=0
+  B=$3
+
+  printf "\x1b[38;2;${R};${G};${B}mTRUECOLOR\x1b[0m\n"
+
+}
+rgb2true "${@}"
