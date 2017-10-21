@@ -2,23 +2,37 @@
 
 
 help() {
-  printf "Usage:\n$0 RRR [GGG] [BBB]\n"
+  printf '\a\n%s\n\n\x1b[38;4m%s\x1b[0m\n%s\n\v%s\n' \
+         "Usage:$0 RRR [GGG] [BBB]" \
+         "Note" \
+         "This program requires at least one argument, taking up to three of type integer. Each argument must be in range [0,255]. If an argument is unspecified, a 0-value is assumed." \
+         "The default background color is black."
 }
 
-
-
 rgb2true() {
-
+  R=0;G=0;B=0
+  
   [[ -z $1 ]] && help && return 1
   R=$1
 
-  [[ -z $2 ]] && G=0
-  G=$2
+  [[ ! -z $2 ]] && G=$2
 
-  [[ -z $3 ]] && B=0
-  B=$3
+  [[ ! -z $3 ]] && B=$3
 
-  printf "\x1b[38;2;${R};${G};${B}mTRUECOLOR\x1b[0m\n"
-
+  for arg in $@; do
+    if [[ $arg -lt 0 || $arg -gt 255 ]]; then
+      printf '\a%s\n' "Argument '${arg}' does not fall in the range [0,255]."
+      return 1
+    fi
+  done
+             
+  printf "\x1b[48;2;0;0;0m"
+  printf "\x1b[38;2;${R};${G};${B}m"
+  printf "TRUECOLOR"
+  printf "\x1b[0m"
+  printf "\t\v"
+  printf '%s' "\x1b[38;2;${R};${G};${B}mTRUECOLOR\x1b[0m"
+  printf "\n"
+  
 }
 rgb2true "${@}"
