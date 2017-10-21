@@ -32,6 +32,9 @@ rgb2true() {
   printf "\x1b[0m"
   printf "\t\v"
   printf '%s' "\x1b[38;2;${R};${G};${B}mTRUECOLOR\x1b[0m"
+  printf "\n\v\t\t"
+  printf '%s\n' "printf \"\x1b[38;2;${R};${G};${B}m%s\x1b[0m\n\" \"example text\""
+  
   printf "\n"
   
 }
