@@ -17,6 +17,7 @@ printf "\x1b[38;2;255;0;255m%s\x1b[0m\n" "example text"
 ```
 
 __Acknowledgements__
+
 v0.0.2: \/u\/-BruXy- of Reddit for helpful tips on error redirection and streamlining code.
 
 
