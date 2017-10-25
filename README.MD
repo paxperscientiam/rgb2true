@@ -21,7 +21,11 @@ __Acknowledgements__
 v0.0.2: \/u\/-BruXy- of Reddit for helpful tips on error redirection and streamlining code.
 
 
+__TO-DO__
 
+* interpret hex color input
+* make bpkg compatible
+* accept string to colorize
 
 
 __References__
